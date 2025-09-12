@@ -1,0 +1,9 @@
+.task-card {
+  margin-bottom: 12px;
+  transition: 0.3s;
+}
+
+.task-card.completed {
+  background-color: #e0ffe0; /* verde clarinho */
+  text-decoration: line-through;
+}

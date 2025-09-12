@@ -1,0 +1,16 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="task-form">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Título</mat-label>
+    <input matInput formControlName="title" placeholder="Digite o título da tarefa" />
+    <mat-error *ngIf="taskForm.get('title')?.invalid">O título é obrigatório</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Descrição</mat-label>
+    <textarea matInput formControlName="description" placeholder="Digite a descrição"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="taskForm.invalid">
+    Adicionar Tarefa
+  </button>
+</form>

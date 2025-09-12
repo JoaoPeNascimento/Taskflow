@@ -1,0 +1,6 @@
+<app-task-form (taskAdded)="addTask($event)"></app-task-form>
+
+@for (task of tasks; track task.id) {
+<app-task-item [task]="task" (delete)="deleteTask($event)" (toggle)="toggleTask($event)">
+</app-task-item>
+}

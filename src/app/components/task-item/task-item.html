@@ -1,0 +1,12 @@
+<mat-card class="task-card" [ngClass]="{ completed: task.completed }">
+  <mat-card-title>{{ task.title }}</mat-card-title>
+  <mat-card-content>
+    <p>{{ task.description || 'Sem descrição' }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary" (click)="toggle.emit(task.id)">
+      {{ task.completed ? 'Marcar como Pendente' : 'Marcar como Concluída' }}
+    </button>
+    <button mat-button color="warn" (click)="delete.emit(task.id)">Remover</button>
+  </mat-card-actions>
+</mat-card>
