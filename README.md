@@ -1,59 +1,66 @@
 # Taskflow
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.1.
+O Taskflow é uma aplicação web de gestão de tarefas (To-Do List) desenvolvida com Angular. O projeto permite criar, visualizar, concluir e eliminar tarefas, persistindo os dados localmente no navegador do utilizador.
 
-## Development server
+## 🛠️ Tecnologias Utilizadas
 
-To start a local development server, run:
+O projeto foi construído utilizando as seguintes tecnologias e bibliotecas:
 
+- Angular 20: Framework principal para o desenvolvimento da interface.
+- Angular Material: Componentes de UI modernos e responsivos.
+- TypeScript: Linguagem base do projeto.
+- RxJS: Biblioteca para programação reativa.
+- LocalStorage: Utilizado para persistência de dados no navegador.
+
+
+## ⚙️ Funcionalidades
+
+- Gestão de Tarefas:
+  - Adicionar: Criar novas tarefas com título e descrição.
+  - Listar: Visualizar todas as tarefas criadas.
+  - Concluir: Marcar/desmarcar tarefas como concluídas (toggle).
+  - Eliminar: Remover tarefas da lista.
+- Persistência de Dados: As tarefas são guardadas no localStorage do browser, garantindo que não se perdem ao atualizar a página.
+
+## 🚀 Como Executar
+
+Este projeto foi gerado com Angular CLI. Para o executar localmente, segue os passos abaixo:
+
+**Pré-requisitos** 
+- Node.js instalado.
+- Angular CLI instalado globalmente (npm install -g @angular/cli).
+
+**Instalação**
+1. Clona o repositório.
+
+2. Instala as dependências do projeto:
+```bash
+npm install
+```
+**Servidor de Desenvolvimento** \
+Executa o comando para iniciar o servidor local:
 ```bash
 ng serve
 ```
+Acesse `http://localhost:4200/` no teu navegador. A aplicação recarrega automaticamente se alterares algum ficheiro de código.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 📂 Estrutura do Projeto
+A lógica principal da aplicação encontra-se dividida nos seguintes componentes e serviços:
+| Componente/Serviço | Função |
+| :--- | :--- |
+| **TaskService** | Gere a lógica de negócio e a comunicação com o `localStorage` (CRUD de tarefas). |
+| **TaskList** | Componente principal que apresenta a lista de tarefas e orquestra as ações. |
+| **TaskItem** | Componente responsável por apresentar uma tarefa individual (importado na lista). |
+| **TaskForm** | Componente de formulário para criação de novas tarefas. |
 
-## Code scaffolding
+## 📦 Build e Testes
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
+- **Build de Produção**: Para gerar os ficheiros otimizados para produção na pasta dist/:
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+- **Testes Unitários**: Para executar os testes via Karma:
 ```bash
 ng test
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
